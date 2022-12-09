@@ -21,15 +21,18 @@ contract ThisIsUs is ERC721 {
   string public baseUri;
 
   constructor(address to, string memory baseUri_)
-    ERC721("ThisIsUs", "US") {
+    ERC721("This Is Us", "ThisIsUs") {
 
     baseUri = baseUri_;
 
     uint i = 0;
 
-    _safeMint(to, i++, "All-Row", "All of Us in a row", "all-row.jpeg");
-    _safeMint(to, i++, "All-Bed", "All of Us in bed", "all-bed.jpeg");
-    _safeMint(to, i++, "All-Paws", "All of Us with paws", "all-paws.jpeg");
+    _safeMint(to, i++, "All-Row", "All of Us in a row", "all-row.png");
+    _safeMint(to, i++, "All-Bed", "All of Us chill in bed", "all-bed.png");
+    _safeMint(to, i++, "All-Paws", "All of Us just meow", "all-meow.png");
+    _safeMint(to, i++, "Fan", "Fanny!", "fan.png");
+    _safeMint(to, i++, "Patrick", "Patrick!", "patrick.png");
+    _safeMint(to, i++, "Taro", "Taroll!", "taro.png");
   }
 
   function _safeMint(address to, uint256 tokenId,
