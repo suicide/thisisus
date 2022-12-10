@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.17;
 
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
@@ -54,6 +54,7 @@ contract ThisIsUs is ERC721 {
     string memory baseURI = baseUri;
     TokenDetails memory details = _tokenDetails[tokenId];
 
+    /* solhint-disable quotes */
     return string(abi.encodePacked('data:application/json;base64,', Base64.encode(abi.encodePacked(
       '{',
         '"name": "', details.name, '", ',
@@ -62,5 +63,6 @@ contract ThisIsUs is ERC721 {
       '}'
       ))
     ));
+    /* solhint-enable quotes */
   }
 }

@@ -1,11 +1,23 @@
 {
   "name": "hardhat-project",
+  "scripts": {
+    "clean": "hardhat clean && rimraf typechain-types cache artifacts",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "lint": "npm run lint:sol",
+    "lint:sol": "solhint '{contracts,test}/**/*.sol' && prettier -c '{contracts,test}/**/*.sol'",
+    "lint:sol:fix": "prettier --write '{contracts,test}/**/*.sol'"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "hardhat": "^2.12.2"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.0",
-    "hardhat-deploy": "^0.11.20"
+    "hardhat-deploy": "^0.11.20",
+    "prettier": "^2.8.1",
+    "prettier-plugin-solidity": "^1.0.0",
+    "rimraf": "^3.0.2",
+    "solhint": "^3.3.7"
   }
 }
