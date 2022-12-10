@@ -11,7 +11,7 @@ const func: DeployFunction = async function(hre: HardhatRuntimeEnvironment) {
   const thisIsUs = await deploy('ThisIsUs', {
     contract: "ThisIsUs",
     from: "" + deployer,
-    args: [deployer, "ipfs://bafybeigdnoopbzack5ndo62gd5pfhcjl6gk5e6jdpgap6xvdg76q6ixmhy/"],
+    args: [deployer, "ipfs://bafybeibr3wrnw3my5xzb6epmt252y5kfpf5uquinese76d53hlbqkkaeum/"],
     log: true,
   });
 
