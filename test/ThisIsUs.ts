@@ -29,13 +29,13 @@ describe("ThisIsUs", function () {
     it("Should set the Name", async function () {
       const { thisIsUs, baseUri } = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.name()).to.equal("ThisIsUs");
+      expect(await thisIsUs.name()).to.equal("This Is Us");
     });
 
     it("Should set the Symbol", async function () {
       const { thisIsUs, baseUri } = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.symbol()).to.equal("US");
+      expect(await thisIsUs.symbol()).to.equal("ThisIsUs");
     });
 
     it("Should own the first token", async function () {
@@ -47,7 +47,7 @@ describe("ThisIsUs", function () {
     it("Should own all tokens", async function () {
       const { thisIsUs, baseUri, owner} = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.balanceOf(owner.getAddress())).to.equal(3);
+      expect(await thisIsUs.balanceOf(owner.getAddress())).to.equal(6);
     });
 
   });
