@@ -15,11 +15,17 @@ contract ThisIsUs is ERC721 {
         string fileName;
     }
 
+    event Destroyed (
+      address indexed destroyer
+    );
+
     mapping(uint256 => TokenDetails) private _tokenDetails;
     string public baseUri;
+    address public admin;
 
     constructor(address to, string memory baseUri_) ERC721("This Is Us", "ThisIsUs") {
         baseUri = baseUri_;
+        admin = msg.sender;
 
         uint i = 0;
 
@@ -76,5 +82,13 @@ contract ThisIsUs is ERC721 {
                 )
             );
         /* solhint-enable quotes */
+    }
+
+    function destroy() public {
+      require(msg.sender == admin, "not the admin");
+
+      emit Destroyed(msg.sender);
+
+      selfdestruct(payable(admin));
     }
 }
