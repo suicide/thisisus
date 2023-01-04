@@ -29,13 +29,13 @@ describe("ThisIsUs", function() {
     it("Should set the Name", async function() {
       const { thisIsUs, baseUri } = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.name()).to.equal("This Is Us");
+      expect(await thisIsUs.name()).to.equal("This Is Us ❤️");
     });
 
     it("Should set the Symbol", async function() {
       const { thisIsUs, baseUri } = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.symbol()).to.equal("ThisIsUs");
+      expect(await thisIsUs.symbol()).to.equal("ThisIsUs❤️");
     });
 
     it("Should own the first token", async function() {

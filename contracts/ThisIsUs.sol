@@ -23,7 +23,7 @@ contract ThisIsUs is ERC721 {
     string public baseUri;
     address public admin;
 
-    constructor(address to, string memory baseUri_) ERC721("This Is Us", "ThisIsUs") {
+    constructor(address to, string memory baseUri_) ERC721(unicode"This Is Us ❤️", unicode"ThisIsUs❤️") {
         baseUri = baseUri_;
         admin = msg.sender;
 
