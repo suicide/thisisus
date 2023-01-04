@@ -19,7 +19,7 @@ contract ThisIsUs is ERC721 {
       address indexed destroyer
     );
 
-    mapping(uint256 => TokenDetails) private _tokenDetails;
+    mapping(uint256 => TokenDetails) private tokenDetails;
     string public baseUri;
     address public admin;
 
@@ -29,12 +29,12 @@ contract ThisIsUs is ERC721 {
 
         uint i = 0;
 
-        _safeMint(to, i++, "All-Row", "All of Us in a row", "all-row.png");
-        _safeMint(to, i++, "All-Bed", "All of Us chill in bed", "all-bed.png");
-        _safeMint(to, i++, "All-Paws", "All of Us just meow", "all-meow.png");
-        _safeMint(to, i++, "Fan", "Fanny!", "fan.png");
-        _safeMint(to, i++, "Patrick", "Patrick!", "patrick.png");
-        _safeMint(to, i++, "Taro", "Taroll!", "taro.png");
+        _safeMint(to, ++i, "All-Row", "All of Us in a row", "all-row.png");
+        _safeMint(to, ++i, "All-Bed", "All of Us chill in bed", "all-bed.png");
+        _safeMint(to, ++i, "All-Paws", "All of Us just meow", "all-meow.png");
+        _safeMint(to, ++i, "Fan", "Fanny!", "fan.png");
+        _safeMint(to, ++i, "Patrick", "Patrick!", "patrick.png");
+        _safeMint(to, ++i, "Taro", "Taroll!", "taro.png");
     }
 
     function _safeMint(
@@ -46,7 +46,7 @@ contract ThisIsUs is ERC721 {
     ) internal virtual {
         super._safeMint(to, tokenId);
 
-        _tokenDetails[tokenId] = TokenDetails(name, description, fileName);
+        tokenDetails[tokenId] = TokenDetails(name, description, fileName);
     }
 
     /**
@@ -56,7 +56,7 @@ contract ThisIsUs is ERC721 {
         _requireMinted(tokenId);
 
         string memory baseURI = baseUri;
-        TokenDetails memory details = _tokenDetails[tokenId];
+        TokenDetails memory details = tokenDetails[tokenId];
 
         /* solhint-disable quotes */
         return

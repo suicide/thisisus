@@ -41,7 +41,7 @@ describe("ThisIsUs", function() {
     it("Should own the first token", async function() {
       const { thisIsUs, baseUri, owner } = await loadFixture(deployFixture);
 
-      expect(await thisIsUs.ownerOf(0)).to.equal(await owner.getAddress());
+      expect(await thisIsUs.ownerOf(1)).to.equal(await owner.getAddress());
     });
 
     it("Should own all tokens", async function() {
