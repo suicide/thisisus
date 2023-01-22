@@ -19,6 +19,12 @@ const config: HardhatUserConfig = {
       saveDeployments: false,
       tags: ["test", "local"]
     },
+    polygon: {
+      live: true,
+      url: process.env.POLYGON_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
     mumbai: {
       live: true,
       url: process.env.MUMBAI_URL || "",
